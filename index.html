@@ -3,11 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>이유정의 자기소개서</title>
-  <link rel="stylesheet" href="lyj.css">
+  <link rel="stylesheet" href="static/styles/lyj.css">
 </head>
 <body>
+  <button id="HelloBtn">Hello</button>
+  <button id="ByeBtn">Good Bye</button>
+  <button onclick="toggleImg()">사진의 배경 색이 바뀝니다</button>
+
   <div class="box">
-    <img class="lyjjpg" src="lyj.jpg" width="350"/>
+    <img id="lyjjpg" src="static/images/lyj.jpg" width="350"/>
+
     <div class="textbox">
       <p class="mju">안녕하세요 :-)<br>명지대학교 컴퓨터공학과 4학년</p>
       <h1 class="name">이유정입니다.</h1>
@@ -27,22 +32,36 @@
       </section>
     </div>
   </div>
-  <div class="box">
+  <div class="box2">
     <section class="information">
-      <img class="profile" src="bohol.jpg" width="100">
+      <img class="profile" src="static/images/bohol.jpg" width="100">
       <p class="id">eww_jeong</p>
     </section>
     <section>  
       <a href="https://www.instagram.com/eww_jeong/" target="_blank">
-        <img class="photo" src="friend.jpg"/>
-        <img class="photo" src="malddong.jpg"/>
-        <img class="photo" src="birthday.jpg"/>
+        <img class="photo" src="static/images/friend.jpg"/>
+        <img class="photo" src="static/images/malddong.jpg"/>
+        <img class="photo" src="static/images/birthday.jpg"/>
     </a>
     </section>
-
-
   </div>
 
+  <script>
+    var HelloBtn = document.getElementById('HelloBtn');
+    var clickListener = function() {
+      alert('Hello!');
+    };
+    HelloBtn.addEventListener('click', clickListener);
 
+    //Bye 버튼을 클릭하면 다시 Hello 버튼을 클릭해도 더 이상 'Hello' 알림창이 나타나지 않는다.
+    var ByeBtn = document.getElementById('ByeBtn');
+    ByeBtn.addEventListener('click', function() {
+      HelloBtn.removeEventListener('click', clickListener);
+    });
+
+    function toggleImg() {
+      document.getElementById("lyjjpg").src = "static/images/white_lyj.jpg";
+    }
+  </script>
 </body>
 </html>

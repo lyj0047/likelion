@@ -4,8 +4,24 @@
   font-family: 'Montserrat';
 }
 
+.btn-wrap {
+  float: right;
+  width: 100%;
+}
 
 .box{
+  overflow: hidden;
+  width: 350px;
+  padding: 30px;
+  margin: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #ebebeb;
+  border: 10px solid #4B5D6B;
+  box-shadow: 0 10px 20px 10px rgba(0, 0, 0, 0.2);
+}
+
+.box2{
   overflow: hidden;
   width: 1010px;
   padding: 30px;
@@ -24,24 +40,24 @@
 }
 
 .mju {
-  text-align: right;
+  text-align: left;
   font-size: 16px;
   color:#7c7c7c;
 }
 
 .name {
   font-size: 48px;
-  text-align: right;
+  text-align: left;
+  /*float: right;*/
   font-weight: bold;
   color: #282828;
-  float: right;
 }
 
 .detail {
-  text-align: right;
+  text-align: left;
   font-size: 16px;
-  padding-left: 100px;
-  float: right;
+  /*padding-left: 100px;
+  float: right;*/
 }
 
 .information{
@@ -65,4 +81,3 @@
   transition: transform 1s;
   filter: brightness(70%);
 }
-
