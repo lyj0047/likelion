@@ -6,12 +6,12 @@
   <link rel="stylesheet" href="static/styles/lyj.css">
 </head>
 <body>
-  <button id="HelloBtn">Hello</button>
+  <button type="button" onclick="location.href='https://www.instagram.com/eww_jeong/' ">이유정의 인스타그램</button>
+  <button id="HelloBtn">이유정과 인사하기</button>
   <button id="ByeBtn">Good Bye</button>
-  <button onclick="toggleImg()">사진의 배경 색이 바뀝니다</button>
 
   <div class="box">
-    <img id="lyjjpg" src="static/images/lyj.jpg" width="350"/>
+    <img id="blueLyj" onclick="changeImg()" src="static/images/blue_lyj.jpg" width="350"/>
 
     <div class="textbox">
       <p class="mju">안녕하세요 :-)<br>명지대학교 컴퓨터공학과 4학년</p>
@@ -32,7 +32,7 @@
       </section>
     </div>
   </div>
-  <div class="box2">
+  <div class="instagram">
     <section class="information">
       <img class="profile" src="static/images/bohol.jpg" width="100">
       <p class="id">eww_jeong</p>
@@ -49,7 +49,7 @@
   <script>
     var HelloBtn = document.getElementById('HelloBtn');
     var clickListener = function() {
-      alert('Hello!');
+      alert('안녕하세요!');
     };
     HelloBtn.addEventListener('click', clickListener);
 
@@ -58,9 +58,16 @@
     ByeBtn.addEventListener('click', function() {
       HelloBtn.removeEventListener('click', clickListener);
     });
-
-    function toggleImg() {
-      document.getElementById("lyjjpg").src = "static/images/white_lyj.jpg";
+    
+    //사진을 누르면 배경이 바뀐다.
+    function changeImg() {
+      var lyjJpg = document.getElementById('blueLyj');
+      if (lyjJpg.src.match("blue")) {
+        lyjJpg.src = "static/images/white_lyj.jpg"
+      }
+      else {
+        lyjJpg.src = "static/images/blue_lyj.jpg"
+      }
     }
   </script>
 </body>
